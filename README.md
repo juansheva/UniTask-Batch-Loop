@@ -1,4 +1,4 @@
-# UNITY BATCH LOOP
+# UNITASK BATCH LOOP
 Unity Project contain script for batch loop using UniTask so i can limit maximum loop for one frame
 
 ## NOTE
