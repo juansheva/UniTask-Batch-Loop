@@ -3,7 +3,6 @@
     "displayName": "UniTask Batch Loop",
     "version": "1.0.0",
     "unity": "2021.3",
-    "dependencies": {"com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask.git"},
     "description": "script for batch loop using unitask so i can limit maximum loop for one frame",
     "author": {
         "name": "Sheva",
