@@ -1,17 +1,16 @@
-
-
 namespace Batch_Loop_Async.UniTask
 {
     using System;
     using System.Collections.Generic;
     using Cysharp.Threading.Tasks;
     using UnityEngine;
-    
-    public static class BatchLoopAsync
+
+
+    public static class UniTaskBatchLoopAsync
     {
         #region Common Loop
 
-        private static async UniTask UniTaskBatchLoop(int totaliterations, int batchsize, Action<int> process)
+        public static async UniTask UniTaskBatchLoop(int totaliterations, int batchsize, Action<int> process)
         {
             for (int i = 0; i < totaliterations; i += batchsize)
             {
@@ -25,7 +24,7 @@ namespace Batch_Loop_Async.UniTask
         public static async UniTask UniTaskBatchLoop<T>(T[] arraydata, int batchsize, Action<T> process) =>
             await UniTaskBatchLoop(arraydata.Length, batchsize, (i) => process(arraydata[i]));
 
-        private static async UniTask UniTaskBatchLoopReverse(int totaliterations, int batchsize, Action<int> process)
+        public static async UniTask UniTaskBatchLoopReverse(int totaliterations, int batchsize, Action<int> process)
         {
             for (int i = totaliterations; i > 0; i -= batchsize)
             {
@@ -36,7 +35,7 @@ namespace Batch_Loop_Async.UniTask
             }
         }
 
-        private static async UniTask UniTaskBatchLoopReverse<T>(T[] arraydata, int batchsize, Action<T> process) =>
+        public static async UniTask UniTaskBatchLoopReverse<T>(T[] arraydata, int batchsize, Action<T> process) =>
             await UniTaskBatchLoopReverse(arraydata.Length, batchsize, (i) => process(arraydata[i]));
 
         #endregion
